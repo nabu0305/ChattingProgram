@@ -1,0 +1,28 @@
+{
+  "name": "zoomcloning",
+  "version": "1.0.0",
+  "description": "ZoomClone using NodeJS and WebSockets",
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/nabu0305/ZoomCloning.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "bugs": {
+    "url": "https://github.com/nabu0305/ZoomCloning/issues"
+  },
+  "homepage": "https://github.com/nabu0305/ZoomCloning#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.8",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "pug": "^3.0.2"
+  }
+}
