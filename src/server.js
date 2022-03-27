@@ -18,10 +18,19 @@ const sockets = [];
 
 wss.on("connection", (socket) => {
   sockets.push(socket);
+  socket["nickname"] = "Anon";
   console.log("Connected to Browser ✔");
   socket.on("close", () => console.log("DisConnection to Browser ❌"));
-  socket.on("message", (message) => {
-    sockets.forEach((aSocket) => aSocket.send(message));
+  socket.on("message", (msg) => {
+    const message = JSON.parse(msg);
+    switch (message.type) {
+      case "new_message":
+        sockets.forEach((aSocket) =>
+          aSocket.send(`${socket.nickname}: ${message.paylod}`)
+        );
+      case "nickname":
+        socket["nickname"] = message.paylod;
+    }
   });
 });
 
