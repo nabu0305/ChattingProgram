@@ -12,7 +12,15 @@ app.get("/*", (req, res) => res.redirect("/"));
 const httpServer = http.createServer(app);
 const wsServer = SocketIO(httpServer);
 
-wsServer.on("connection", (socket) => {});
+wsServer.on("connection", (socket) => {
+  socket.onAny((event) => {
+    console.log(`Socket event : ${event}`);
+  });
+  socket.on("enter_room", (roomName, done) => {
+    socket.join(roomName);
+    done();
+  });
+});
 /*
 wss.on("connection", (socket) => {
   sockets.push(socket);
