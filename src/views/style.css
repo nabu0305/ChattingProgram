@@ -4,6 +4,8 @@
   --font-size: medium;
   --chatting-backcolor_blue: rgb(160, 178, 211);
   --chatting_room_size: 700px;
+  --RoomList_size_height: 700px;
+  --RoomList_size_width: 300px;
 }
 
 * {
@@ -38,7 +40,14 @@ header {
   flex-direction: column;
 }
 #welcome form {
-  height: var(--blank_height);
+  width: var(--RoomList_size_width);
+  background-color: var(--chatting-backcolor_blue);
+}
+
+#Room_list {
+  background-color: var(--chatting-backcolor_blue);
+  height: var(--RoomList_size_height);
+  width: var(--RoomList_size_width);
 }
 #wrap {
   display: flex;
@@ -51,6 +60,7 @@ header {
 #room_name {
   height: var(--blank_height);
   font-size: var(--font-size);
+  width: 260px;
 }
 
 #msg input {
