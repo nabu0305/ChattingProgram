@@ -1,3 +1,9 @@
+:root {
+  --blank_width: 40px;
+  --blank_height: 40px;
+  --font-size: var(--font-size);
+}
+
 * {
   font-weight: bold;
   padding: 0%;
@@ -5,7 +11,8 @@
   list-style: none;
 }
 button {
-  height: 50px;
+  height: var(--blank_height);
+  width: var(--blank_width);
 }
 
 body {
@@ -20,7 +27,7 @@ body {
 header {
   display: flex;
   justify-content: center;
-  font-size: medium;
+  font-size: var(--font-size);
 }
 
 #welcome {
@@ -29,7 +36,7 @@ header {
   flex-direction: column;
 }
 #welcome form {
-  height: 50px;
+  height: var(--blank_height);
 }
 #wrap {
   display: flex;
@@ -40,16 +47,16 @@ header {
 }
 
 #room_name {
-  height: 50px;
-  font-size: medium;
-}
-
-#msg {
-  height: 40px;
-  font-size: medium;
+  height: var(--blank_height);
+  font-size: var(--font-size);
 }
 
 #msg input {
-  height: 40px;
-  font-size: medium;
+  height: var(--blank_height);
+  font-size: var(--font-size);
+}
+
+#name input {
+  height: var(--blank_height);
+  font-size: var(--font-size);
 }
