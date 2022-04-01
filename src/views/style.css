@@ -1,7 +1,9 @@
 :root {
   --blank_width: 40px;
   --blank_height: 40px;
-  --font-size: var(--font-size);
+  --font-size: medium;
+  --chatting-backcolor_blue: rgb(160, 178, 211);
+  --chatting_room_size: 700px;
 }
 
 * {
@@ -59,4 +61,12 @@ header {
 #name input {
   height: var(--blank_height);
   font-size: var(--font-size);
+}
+
+#chatting_room {
+  background-color: var(--chatting-backcolor_blue);
+  height: var(--chatting_room_size);
+  width: var(--chatting_room_size);
+  word-break: break-all;
+  overflow-y: scroll;
 }
