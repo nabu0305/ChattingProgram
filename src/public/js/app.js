@@ -29,7 +29,8 @@ function showRoom() {
   room_name.hidden = true;
   form.hidden = true;
   room.hidden = false;
-  roomlists.hidden = true;
+  Room_list.hidden = true;
+  
   const h3 = room.querySelector("h3");
   h3.innerText = ` ${roomName}방`;
   const msgform = room.querySelector("#msg");
@@ -51,7 +52,9 @@ function handleRoomSubmit(event) {
   input.value = "";
 }
 
+function RoomListCheck() {}
 form.addEventListener("submit", handleRoomSubmit);
+
 socket.on("welcome", (user, newCount) => {
   const h3 = room.querySelector("h3");
   h3.innerText = `Room ${roomName} (${newCount})`;
@@ -63,8 +66,15 @@ socket.on("bye", (user, newCount) => {
   h3.innerText = `Room ${roomName} (${newCount})`;
   addMessage(`${user} left`);
 });
-/*
-socket.on("list",(room_name,newCount)=>{
-  const 
-})*/
+
+socket.on("room_change", (rooms) => {
+  const roomlist = welcome.querySelector("ul");
+  roomlist.innerHTML = "";
+
+  rooms.forEach((room) => {
+    const li = document.createElement("li");
+    li.innerText = `${room}방`;
+    roomlist.appendChild(li);
+  });
+});
 socket.on("new_message", addMessage);
