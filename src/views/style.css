@@ -2,6 +2,7 @@
   font-weight: bold;
   padding: 0%;
   border: 0px;
+  list-style: none;
 }
 button {
   height: 50px;
@@ -40,5 +41,15 @@ header {
 
 #room_name {
   height: 50px;
+  font-size: medium;
+}
+
+#msg {
+  height: 40px;
+  font-size: medium;
+}
+
+#msg input {
+  height: 40px;
   font-size: medium;
 }

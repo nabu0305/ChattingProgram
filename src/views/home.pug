@@ -3,25 +3,29 @@ html(lang="ko")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Noom
+        title Open Chatting
         style
             include style.css
     body 
         div#wrap
             header 
-                h1 오픈 채팅방입니다!
+                h1 오픈 채팅방
             main 
                 div#welcome
                     form
                         input(placeholder="방 제목", required, type="text" id="room_name")
                         button 입장   
-                h4 방 리스트:
-                ul                    
+                h4#roomlists 방 리스트:
+                ul#roomlist                    
                 div#room
+                    form#name
+                        input(placeholder="nickname", required, type="text")
+                        button Save
                     h3 
                     ul 
                     form#msg
                         input(type="text",placeholder="message",required)
                         button Send
         script(src="/socket.io/socket.io.js")    
-        script(src="public/js/app.js")  
+        script(src="/public/js/app.js") 
+        

@@ -64,25 +64,6 @@ wsServer.on("connection", (socket) => {
   });
   socket.on("nickname", (nickname) => (socket["nickname"] = nickname));
 });
-/*
-wss.on("connection", (socket) => {
-  sockets.push(socket);
-  socket["nickname"] = "Anon";
-  console.log("Connected to Browser ✔");
-  socket.on("close", () => console.log("DisConnection to Browser ❌"));
-  socket.on("message", (msg) => {
-    const message = JSON.parse(msg);
-    switch (message.type) {
-      case "new_message":
-        sockets.forEach((aSocket) =>
-          aSocket.send(`${socket.nickname}: ${message.paylod}`)
-        );
-      case "nickname":
-        socket["nickname"] = message.paylod;
-    }
-  });
-});
-*/
 
 const handleListen = () =>
   console.log(`Listening on https://zoomcloning-lwcbl.run.goorm.io/`);
