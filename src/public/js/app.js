@@ -30,7 +30,7 @@ function showRoom() {
   form.hidden = true;
   room.hidden = false;
   Room_list.hidden = true;
-  
+
   const h3 = room.querySelector("h3");
   h3.innerText = ` ${roomName}방`;
   const msgform = room.querySelector("#msg");
@@ -52,18 +52,17 @@ function handleRoomSubmit(event) {
   input.value = "";
 }
 
-function RoomListCheck() {}
 form.addEventListener("submit", handleRoomSubmit);
 
 socket.on("welcome", (user, newCount) => {
   const h3 = room.querySelector("h3");
-  h3.innerText = `Room ${roomName} (${newCount})`;
+  h3.innerText = `${roomName} (${newCount})`;
   addMessage(`${user} join!`);
 });
 
 socket.on("bye", (user, newCount) => {
   const h3 = room.querySelector("h3");
-  h3.innerText = `Room ${roomName} (${newCount})`;
+  h3.innerText = `${roomName} (${newCount})`;
   addMessage(`${user} left`);
 });
 
